@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Seblak - Kedai Seblak Huh Hah🔥</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="landingpage.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+    <h1>Daftar Menu Seblak</h1>
+  </header>
+
+  <section class="menu-section">
+    <div class="search-filter">
+      <input type="text" id="search" placeholder="Cari menu seblak...">
+      <select id="kategori">
+        <option value="semua">Semua Kategori</option>
+        <option value="original">Original</option>
+        <option value="pedas">Pedas</option>
+        <option value="spesial">Spesial</option>
+        <option value="seafood">Seafood</option>
+        <option value="jamur">Jamur</option>
+        <option value="bakso">Bakso</option>
+        <option value="sosis">Sosis</option>
+      </select>
+    </div>
+
+    <div class="menu-list" id="menuList">
+
+      <div class="menu-item" data-kategori="original pedas">
+        <img src="https://share.google/images/YynvSxgdTICcs9y0A" alt="Seblak Original">
+        <h3>Seblak Original</h3>
+        <p>Pedas ringan dengan topping kerupuk khas Bandung.</p>
+        <p class="harga">Rp 6.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Original" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="pedas ceker">
+        <img src="https://share.google/images/U0UpyAAhzavXnv4t8" alt="Seblak Ceker">
+        <h3>Seblak Ceker</h3>
+        <p>Level pedas 3🔥 dengan topping ceker empuk dan gurih.</p>
+        <p class="harga">Rp 8.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Ceker" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="spesial pedas">
+        <img src="https://share.google/images/E1Es6EifGrVGANuxI" alt="Seblak Spesial">
+        <h3>Seblak Spesial</h3>
+        <p>Paduan topping komplit: kerupuk, makaroni, bakso, sosis, dan telur.</p>
+        <p class="harga">Rp 15.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Spesial" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="seafood pedas">
+        <img src="https://share.google/images/F7JQTn4arPTw7Wl3h" alt="Seblak Suki">
+        <h3>Seblak Suki (Seafood)</h3>
+        <p>Seblak kuah gurih dengan topping seafood segar: udang, crab stick, dan cumi.</p>
+        <p class="harga">Rp 13.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Suki" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="jamur">
+        <img src="https://share.google/images/W4ySRzgYuB0bHgd3K" alt="Seblak Jamur">
+        <h3>Seblak Jamur</h3>
+        <p>Dilengkapi jamur tiram lembut dan rasa gurih pedas yang pas.</p>
+        <p class="harga">Rp 7.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Jamur" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="bakso pedas">
+        <img src="https://share.google/images/sQqr7wTSQNDdi4k0R" alt="Seblak Bakso">
+        <h3>Seblak Bakso</h3>
+        <p>Topping bakso sapi kenyal dalam kuah pedas nikmat khas Bandung.</p>
+        <p class="harga">Rp 9.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Bakso" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-kategori="sosis">
+        <img src="https://share.google/images/ft4NuZG2iv0XDxTZd" alt="Seblak Sosis">
+        <h3>Seblak Sosis</h3>
+        <p>Pedas nikmat dengan topping sosis ayam gurih, cocok untuk semua kalangan.</p>
+        <p class="harga">Rp 7.000</p>
+        <div class="menu-actions">
+          <a href="detail.html?nama=Seblak Sosis" class="btn-detail">Detail</a>
+          <a href="pemesanan.html" class="btn-pesan">Pesan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const searchInput = document.getElementById('search');
+    const kategoriSelect = document.getElementById('kategori');
+    const menuList = document.getElementById('menuList');
+    const items = menuList.getElementsByClassName('menu-item');
+
+    function filterMenu() {
+      const searchValue = searchInput.value.toLowerCase();
+      const kategoriValue = kategoriSelect.value;
+
+      for (let item of items) {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const kategori = item.dataset.kategori.toLowerCase();
+
+        const cocokNama = title.includes(searchValue);
+        const cocokKategori = kategoriValue === 'semua' || kategori.includes(kategoriValue);
+
+        item.style.display = (cocokNama && cocokKategori) ? 'block' : 'none';
+      }
+    }
+
+    searchInput.addEventListener('input', filterMenu);
+    kategoriSelect.addEventListener('change', filterMenu);
+  </script>
+</body>
+</html>

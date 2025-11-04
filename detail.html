@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Menu Seblak</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="menuseblak.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+    <h1>Detail Menu Seblak</h1>
+  </header>
+
+  <section class="detail-section">
+    <div class="detail-container">
+      <img id="menuImg" src="" alt="Gambar Seblak">
+      <div class="detail-info">
+        <h2 id="menuNama">Nama Seblak</h2>
+        <p id="menuDeskripsi">Deskripsi menu akan muncul di sini.</p>
+        <p class="harga" id="menuHarga">Rp 0</p>
+        <a id="pesanBtn" href="#" class="btn-pesan"><i class="fa-solid fa-bowl-food"></i> Pesan Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+
+    const menuData = {
+      "Seblak Original": {
+        img: "https://share.google/images/YynvSxgdTICcs9y0A",
+        desc: "Seblak klasik dengan rasa gurih pedas khas Bandung dan topping kerupuk renyah.",
+        harga: "Rp 6.000"
+      },
+      "Seblak Ceker": {
+        img: "https://share.google/images/U0UpyAAhzavXnv4t8",
+        desc: "Pedas nikmat dengan ceker empuk yang direbus sempurna.",
+        harga: "Rp 8.000"
+      },
+      "Seblak Spesial": {
+        img: "https://share.google/images/E1Es6EifGrVGANuxI",
+        desc: "Rasa komplit: bakso, sosis, telur, dan kerupuk dalam kuah pedas gurih.",
+        harga: "Rp 15.000"
+      },
+      "Seblak Suki (Seafood)": {
+        img: "https://share.google/images/F7JQTn4arPTw7Wl3h",
+        desc: "Kuah pedas dengan topping seafood segar: udang, cumi, dan crab stick.",
+        harga: "Rp 13.000"
+      },
+      "Seblak Jamur": {
+        img: "https://share.google/images/W4ySRzgYuB0bHgd3K",
+        desc: "Kuah gurih dengan potongan jamur lembut dan pedas pas di lidah.",
+        harga: "Rp 7.000"
+      },
+      "Seblak Bakso": {
+        img: "https://share.google/images/sQqr7wTSQNDdi4k0R",
+        desc: "Bakso kenyal berpadu dengan kuah pedas yang menggugah selera.",
+        harga: "Rp 9.000"
+      },
+      "Seblak Sosis": {
+        img: "https://share.google/images/ft4NuZG2iv0XDxTZd",
+        desc: "Sosis ayam gurih dengan rasa pedas khas Bandung.",
+        harga: "Rp 7.000"
+      }
+    };
+
+    if (menuData[nama]) {
+      document.getElementById("menuNama").textContent = nama;
+      document.getElementById("menuImg").src = menuData[nama].img;
+      document.getElementById("menuDeskripsi").textContent = menuData[nama].desc;
+      document.getElementById("menuHarga").textContent = menuData[nama].harga;
+    } else {
+      document.querySelector(".detail-section").innerHTML = "<p>Menu tidak ditemukan 😢</p>";
+    }
+  </script>
+
+</body>
+</html>

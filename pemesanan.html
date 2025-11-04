@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan Seblak</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="menuseblak.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+    <h1>Form Pemesanan Seblak</h1>
+  </header>
+
+  <section class="form-section">
+    <form id="formPesan" action="#" method="post">
+      <label for="menu">Menu yang Dipesan:</label>
+      <input type="text" id="menu" name="menu" readonly>
+
+      <label for="nama">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email aktif" required>
+
+      <label for="jumlah">Jumlah Pesanan:</label>
+      <input type="number" id="jumlah" name="jumlah" min="1" value="1" required>
+
+      <label for="level">Level Pedas:</label>
+      <select id="level" name="level" required>
+        <option value="1">Level 1 - Normal</option>
+        <option value="2">Level 2</option>
+        <option value="3">Level 3 - Pedas</option>
+        <option value="4">Level 4</option>
+        <option value="5">Level 5 - Super Pedas 🔥</option>
+      </select>
+
+      <label for="catatan">Catatan Tambahan:</label>
+      <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: tanpa bawang daun..."></textarea>
+
+      <button type="submit" class="btn-submit">
+        <i class="fa-solid fa-paper-plane"></i> Kirim Pesanan
+      </button>
+    </form>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const menu = params.get("menu");
+
+    if (menu) {
+      document.getElementById("menu").value = menu;
+    }
+
+    const form = document.getElementById("formPesan");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Pesanan Anda telah dikirim! Terima kasih 😊");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
